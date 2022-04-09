@@ -1,0 +1,17 @@
+---
+- include_vars: '../../../templates/k8s_bastion/vars.yml'
+
+- name: Test ping
+  ping:
+
+- name: Debug - Inventory Vars
+  debug:
+    msg: 'custom_suite_var value: {{ custom_suite_var }}'
+
+- name: Debug - File Vars
+  debug:
+    msg: 'Printing: {{ custom_user_data.value.name }}'
+  loop: '{{ users | dict2items }}'
+  loop_control:
+    loop_var: custom_user_data
+...

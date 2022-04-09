@@ -1,0 +1,26 @@
+---
+- hosts: all
+  tasks:
+    - name: Test ping
+      ping:
+
+    - name: Debug - Inventory Vars
+      debug:
+        msg: 'custom_suite_var value: {{ custom_suite_var }}'
+
+    - name: Including File Vars
+      include_vars: vars.yml
+
+    - name: Debug - File Vars
+      debug:
+        msg: 'Printing: {{ custom_user_data.value.name }}'
+      loop: '{{ users | dict2items }}'
+      loop_control:
+        loop_var: custom_user_data
+
+- hosts: all
+  roles:
+    - k8s_users
+...
+
+

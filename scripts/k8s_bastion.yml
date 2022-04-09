@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: Test ping
+      ping:
+
+    - name: Debug - Inventory Vars
+      debug:
+        msg: 'custom_suite_var value: {{ custom_suite_var }}'
+...
+
+

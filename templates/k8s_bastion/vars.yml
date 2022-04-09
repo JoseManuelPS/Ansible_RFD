@@ -1,0 +1,14 @@
+---
+users:
+  k8s_admin:
+    name: k8s
+    second_name: admin 
+  bob_ly:
+    name: bob
+    second_name: ly
+  mary_co:
+    name: mary
+    second_name: co
+packages:
+  - dnf
+  - ifconfig
